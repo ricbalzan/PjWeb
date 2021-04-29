@@ -20,6 +20,10 @@
                 $erros[] = 'E-mail inválido';
             }
 
+            if(!ValidaCPF::testarCPF($_POST['txtCpf'])){
+                $erros[] = 'CPF inválido';
+            }
+
             if (count($erros) == 0) {
                 $usuario = new Usuario();
 
