@@ -6,29 +6,20 @@
   }
   
   body{
+    background-image: url(../images/fundo.jpg);
+    background-position: center;
+    background-size: cover;
     margin:10px;
   }
   
   a{
     text-decoration: none;
   }
-  
-  /* esconde as ancoras da tela */
-  a.links{
-    display: none;
-  }
-  
-  /* content que contem os formulários */
-  .content{
-    width: 500px;
-    margin: 0px auto;
-    position: relative; 
-  }
-  
+
   /* formatando o cabeçalho dos formulários */
   h1{
     font-size: 48px;
-    color: #066a75;
+    color: #1de1f7;
     padding: 10px 0;
     font-family: Arial,sans-serif;
     font-weight: bold;
@@ -61,6 +52,7 @@
   ::-webkit-input-placeholder  {
     color: #bebcbc; 
     font-style: italic;
+
   }
   input:-moz-placeholder,
   textarea:-moz-placeholder{
@@ -71,6 +63,21 @@
     outline: none;
   }
   
+    #cpf{
+        position: relative;
+        width: 100%;
+        margin-top: 4px;
+        padding: 10px;
+        
+}
+
+
+    .conteudo {
+        background-color: rgb(0,0,0,0.6);
+        width: 900px;
+        margin: auto;
+    }
+
 
   /*formulario*/
   input:not([type="checkbox"]){
