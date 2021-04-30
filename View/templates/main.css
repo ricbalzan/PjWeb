@@ -63,29 +63,45 @@
     outline: none;
   }
   
-    #cpf{
-        position: relative;
-        width: 100%;
+    #cpf {
         margin-top: 4px;
         padding: 10px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
         
-}
+        transition: all 1s linear;
+    }
+    #nome {
+        margin-top: 4px;
+        padding: 10px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        
+        transition: all 0.2s linear;
+
+    }
+        
+
 
 
     .conteudo {
-        background-color: rgb(0,0,0,0.6);
+        background-color: rgb(0,0,0,0.4);
         width: 900px;
         margin: auto;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        
+        transition: all 0.2s linear;
     }
 
 
   /*formulario*/
   input:not([type="checkbox"]){
+   
     width: 50%;
     margin-top: 4px;
     padding: 10px;
     border: 1px solid #b2b2b2;
-
     -webkit-border-radius: 5px;
     border-radius: 5px;
     

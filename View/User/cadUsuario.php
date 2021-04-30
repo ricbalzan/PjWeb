@@ -15,8 +15,12 @@
         <div id="cpf">        
         <input class="cpf" type="text" name="txtCpf" id="txtCpf" placeholder="Cpf" /><br><br>
         </div>
+        <div id="nome"> 
         <input class="nome" type="text" name="txtNome" id="txtNome" placeholder="Nome" /><br><br>
+        </div>
+        <div id="txtEmail"> 
         <input type="text" name="txtEmail" id="txtEmail" placeholder="Email" /><br><br>
+        </div>
         <input type="password" name="txtSenha" id="txtSenha" placeholder="Senha" /><br><br>
         <input type="datetime" name="txtNascimento" id="txtNascimento" placeholder="Nacimento DD/MM/AAAA" /><br><br>
         <input type="text" name="txtRg" id="txtRg" placeholder="Rg" /><br><br>
