@@ -22,7 +22,7 @@
         <input type="text" name="txtEmail" id="txtEmail" placeholder="Email" /><br><br>
         </div>
         <input type="password" name="txtSenha" id="txtSenha" placeholder="Senha" /><br><br>
-        <input type="datetime" name="txtNascimento" id="txtNascimento" placeholder="Nacimento DD/MM/AAAA" /><br><br>
+        <input type="date" name="txtNascimento" id="txtNascimento" data-mask="00/00/0000" maxlength="8" placeholder="Nacimento DD/MM/AAAA" /><br><br>
         <input type="text" name="txtRg" id="txtRg" placeholder="Rg" /><br><br>
         <label>Ativo :</label><SELECT  name="txtAtivo" id= "txtAtivo"><OPTION>SIM <OPTION>NÃO </SELECT> <br><br>
 
