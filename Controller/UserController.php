@@ -33,17 +33,17 @@
                 $usuario->senha = $_POST['txtSenha'];
                 $usuario->rg = $_POST['txtRg'];
                 $usuario->ativo=$_POST['txtAtivo'];
-               
-
-                //echo "Usuário $usuario->nome cadastrado com sucesso<br>";
-                header("location:../View/User/detail.php?".
-                        "user=$usuario->nome&"."mail=$usuario->email");
+               /** 
+                /echo "Usuário $usuario->nome cadastrado com sucesso<br>";
+                     header("location:../View/User/detail.php?".
+                    "user=$usuario->nome&"."mail=$usuario->email");
             }
             else {
                 //echo "Ocorreram erros ao cadastrar o usuário<br>";
                 $err = serialize($erros);
                 header("location:../View/User/error.php?erros=$err"); 
             }
+             */
             
             echo "Parabéns, todos os campos foram preenchidos.";
         }
@@ -52,6 +52,7 @@
             $erros = array();
             $erros[] = 'Informe todos os campos';
             $err = serialize($erros);
+        }
+    }
            
-        }   
 ?>
