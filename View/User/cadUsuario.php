@@ -33,11 +33,18 @@
         <div id="txtEmail"> 
         <input type="text" class="form-control" name="txtEmail" id="txtEmail" placeholder="Email" /><br><br>
         </div>
+        <div id="txtSenha"> 
         <input type="password" class="form-control" name="txtSenha" id="txtSenha" placeholder="Senha" /><br><br>
+        </div>
+        <div id="txtNascimento"> 
         <input type="date" class="form-control" name="txtNascimento" id="txtNascimento" data-mask="00/00/0000" maxlength="8" placeholder="Nacimento DD/MM/AAAA" /><br><br>
+        </div>
+        <div id="txtRg">
         <input type="text" class="form-control" name="txtRg" id="txtRg" placeholder="Rg" /><br><br>
+        </div>
+        <div id="txtAtivo">
         <label>Ativo :</label><SELECT  name="txtAtivo" class="form-control" id= "txtAtivo"><OPTION>SIM <OPTION>NÃO </SELECT> <br><br>
-
+        </div>
         
         <input type="submit" class="btn btn-success" value="Cadastrar"/>
         <input type="reset" class="btn btn-warning" value="Limpar"/>
