@@ -27,6 +27,7 @@
             </tr>
         </thead>
         <tbody>
+            
             <tr>
                 <td class="text-center">CPF</td>
                 <td class="text-center">NOME</td>
