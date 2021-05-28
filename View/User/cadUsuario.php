@@ -35,7 +35,7 @@
 
         <div class="col-md-5" id="txtEmail"> 
         <label for="txtEmail">EMAIL:</label>
-        <input type="text" class="form-control" name="txtEmail" id="txtEmail" /><br><br>
+        <input type="email" class="form-control" name="txtEmail" id="txtEmail" /><br><br>
         </div>
 
         <div class="col-md-2" id="txtSenha">

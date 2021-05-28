@@ -11,7 +11,7 @@
                 $erros = unserialize($_SESSION['erros']);
 
                 foreach ($erros as $e) {
-                    echo '<br />' . $e;
+                    echo '<br/>'.$e;
                 }
                 unset($_SESSION['erros']);
                 
