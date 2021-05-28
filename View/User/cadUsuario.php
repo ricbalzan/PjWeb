@@ -2,14 +2,22 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <br>
+        <br>
+        <br>
             <blockquote class="blockquote text-center">
                 <p class="mb-0"><h1>Cadastro de Usuários</h1></p>
             </blockquote>
         <link rel="stylesheet" type="text/css" href="../templates/bootstrap/css/bootstrap.css" />
     </head>
+<br>
+<br>
+<br>
 
     
     <body>
+    <div class="container" id="homer">
+        <div class="container col-xs-12 col-sm-6 col-md-6 col-lg-12">
         <div class="conteudo">
         <form action="../../Controller/UserController.php" method="post" action="" name="form_user">
         <div class="row">
@@ -30,7 +38,7 @@
         <input type="text" class="form-control" name="txtEmail" id="txtEmail" /><br><br>
         </div>
 
-        <div class="col-md-1" id="txtSenha">
+        <div class="col-md-2" id="txtSenha">
         <label for="txtSenha">SENHA:</label>
         <input type="password" class="form-control" name="txtSenha" id="txtSenha" /><br><br>
         </div>
@@ -50,8 +58,18 @@
         <SELECT  name="txtAtivo" class="form-control" id= "txtAtivo"><OPTION>SIM <OPTION>NÃO </SELECT> <br><br>
         </div>
         
+        <div class="container" id="homer">
+        <div class="container col-xs-12 col-sm-6 col-md-6 col-lg-3">
         <input type="submit" class="btn btn-success" value="Cadastrar"/>
+        </div>
+        <div class="container" id="homer">
+        <div class="container col-xs-12 col-sm-6 col-md-6 col-lg-3">
         <input type="reset" class="btn btn-warning" value="Limpar"/>
+        </div>
+</div>
+
+</div>
+</div>
     </form>
     </div>
     </div>
