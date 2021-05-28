@@ -57,15 +57,16 @@
         <label for="txtAtivo">ATIVO:</label>
         <SELECT  name="txtAtivo" class="form-control" id= "txtAtivo"><OPTION>SIM <OPTION>NÃO </SELECT> <br><br>
         </div>
+
+        <div class="container-fluid">
+   <div class="col-sm-12 text-center">
+       <button type="submit" class="btn btn-primary"> Cadastrar</button>
+       <button type="reset" class="btn btn-primary"> Limpar </button>
+   </div>
+</div>
         
-        <div class="container" id="homer">
-        <div class="container col-xs-12 col-sm-6 col-md-6 col-lg-3">
-        <input type="submit" class="btn btn-success" value="Cadastrar"/>
-        </div>
-        <div class="container" id="homer">
-        <div class="container col-xs-12 col-sm-6 col-md-6 col-lg-3">
-        <input type="reset" class="btn btn-warning" value="Limpar"/>
-        </div>
+<br>
+       
 </div>
 
 </div>
@@ -73,6 +74,8 @@
     </form>
     </div>
     </div>
+
+
     </body>
 
 </html>
