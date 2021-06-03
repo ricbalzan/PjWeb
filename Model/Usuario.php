@@ -10,6 +10,8 @@ class Usuario{
     var $nascimento;
     var $rg;
     var $ativo;
+    var $contrato;
+    var $tipo;
     
     //metodo para atribuir/buscar valores de uma variavel;
     public function __construct() {

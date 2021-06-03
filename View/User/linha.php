@@ -2,19 +2,61 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cadastro de Sim Crad</title>
+        <br>
+        <br>
+        <br>
+        <blockquote class="blockquote text-center">
+                <p class="mb-0"><h1>Cadastro de Linhas</h1></p>
+            </blockquote>
+        <link rel="stylesheet" type="text/css" href="../templates/bootstrap/css/bootstrap.css" />
+                <br>
+                <br>
+                <br>
+                <br>
+
     </head>
 
-    <body>
+    <body background="/View/images/fundo.jpg">
 
     <form action="../../Controller/SimController.php" method="post" name="form_sim">
 
-        <input type="text" name="txtnumero" id="txtNumero" placeholder="Numero" /><br><br>
-        <input type="text" name="txtsim" id="txtSim" placeholder="Sim Card" /><br><br>
-        <input type="datetime" name="txtcadastro" id="txtcadastro" placeholder="Data de Cadastro DD/MM/AAAA" /><br><br>
+    <div class="container" id="homer">
+                    <div class="container col-xs-12 col-sm-6 col-md-6 col-lg-12">
+                    <div class="conteudo">
+                    <form action="../../Controller/UserController.php" method="post" action="" name="form_user">
+                <div class="row">
 
-        <input type="submit" value="Cadastrar"/>
-        <input type="reset" value="Limpar"/>
+
+                <div class="col-md-5" id="txtNumero"> 
+                    <label for="txtNumero">NUMERO:</label>
+                    <input class="form-control" type="text" name="txtNumero" id="txtNumero" /><br><br>
+                </div>
+
+                <div class="col-md-5" id="txtSim"> 
+                    <label for="txtSim">SIM CARD:</label>
+                    <input class="form-control" type="text" name="txtSim" id="txtSim" /><br><br>
+                </div>
+
+                <div class="col-md-2" id="txtCadastro"> 
+                    <label for="txtCadastro">DATA DE NASCIMENTO:</label>
+                    <input type="date" class="form-control" name="txtCadastro" id="txtCadastro" data-mask="00/00/0000" maxlength="8" /><br><br>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+                <div class="container-fluid">
+                    <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary"> Cadastrar</button>
+                    <button type="reset" class="btn btn-primary"> Limpar </button>
+                </div>
+
     </form>
      
     </body>

@@ -13,15 +13,12 @@
 <br>
 <br>
 <br>
+ 
+    <body background="/View/images/fundo.jpg">
 
-<!-- Background image -->
-<div
-  style="background-image=../images/fundo.jpg";
-></div>
-<!-- Background image -->
+       
 
-    
-    <body>
+
                 <div class="container" id="homer">
                     <div class="container col-xs-12 col-sm-6 col-md-6 col-lg-12">
                     <div class="conteudo">
@@ -67,6 +64,12 @@
                 <div class="col-md-2" id="txtcontrato">
                     <label for="txtContrato">Numero do Contrato:</label>
                     <input type="text" class="form-control" name="txtcontrato" id="txtContrato" /><br><br>
+                </div>
+
+
+                <div class="col-md-2" id="txtTipo">
+                    <label for="txtTipo">TIPO:</label>
+                    <SELECT  name="txtTipo" class="form-control" id= "txtTipo"><OPTION>FUNCIONÁRIO <OPTION>TERCEIRO </SELECT> <br><br>
                 </div>
 
 
