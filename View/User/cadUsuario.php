@@ -64,6 +64,12 @@
                     <SELECT  name="txtAtivo" class="form-control" id= "txtAtivo"><OPTION>SIM <OPTION>NÃO </SELECT> <br><br>
                 </div>
 
+                <div class="col-md-2" id="txtcontrato">
+                    <label for="txtContrato">Numero do Contrato:</label>
+                    <input type="text" class="form-control" name="txtcontrato" id="txtContrato" /><br><br>
+                </div>
+
+
                 <div class="container-fluid">
                     <div class="col-sm-12 text-center">
                     <button type="submit" class="btn btn-primary"> Cadastrar</button>
