@@ -46,7 +46,7 @@
                     <input type="password" class="form-control" name="txtSenha" id="txtSenha" /><br><br>
                 </div>
 
-                <div class="col-md-2" id="txtNascimento"> 
+                <div class="col-md-3" id="txtNascimento"> 
                     <label for="txtNascimento">DATA DE NASCIMENTO:</label>
                     <input type="date" class="form-control" name="txtNascimento" id="txtNascimento" data-mask="00/00/0000" maxlength="8" /><br><br>
                 </div>
