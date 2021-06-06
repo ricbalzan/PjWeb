@@ -16,7 +16,7 @@
 
     </head>
 
-    <body background="/View/images/fundo.jpg">
+    <body background="/View/images/fundo.jpg" class="img-fluid" alt="Imagem responsiva">
 
     <form action="../../Controller/SimController.php" method="post" name="form_sim">
 
@@ -32,13 +32,13 @@
                     <input class="form-control" type="text" name="txtNumero" id="txtNumero" /><br><br>
                 </div>
 
-                <div class="col-md-5" id="txtSim"> 
+                <div class="col-md-4" id="txtSim"> 
                     <label for="txtSim">SIM CARD:</label>
                     <input class="form-control" type="text" name="txtSim" id="txtSim" /><br><br>
                 </div>
 
-                <div class="col-md-2" id="txtCadastro"> 
-                    <label for="txtCadastro">DATA DE NASCIMENTO:</label>
+                <div class="col-md-3" id="txtCadastro"> 
+                    <label for="txtCadastro">DATA DE CADASTRO:</label>
                     <input type="date" class="form-control" name="txtCadastro" id="txtCadastro" data-mask="00/00/0000" maxlength="8" /><br><br>
                 </div>
                 <br>
