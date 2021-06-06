@@ -8,19 +8,22 @@
             $this->connection = ConnectionDB::getInstance();
         }
 
-        public function create($user) {
+        public function create($usuario) {
             try {
                 $statement = $this->connection->prepare(
-                    "INSERT INTO usuario (cpf, nome, email, senha, nascimento, rg, ativo;) VALUES (?,?,?,?,?,?,?)"
+                    "INSERT INTO usuario (cpf, nome, email, senha, nascimento, rg, ativo, contrato, tipo;) VALUES (?,?,?,?,?,?,?,?,?)"
                 );
 
-                $statement->bindValue(1, $user->cpf);
-                $statement->bindValue(2, $user->nome);
-                $statement->bindValue(3, $user->email);
-                $statement->bindValue(4, $user->senha);
-                $statement->bindValue(5, $user->nascimento);
-                $statement->bindValue(6, $user->rg);
-                $statement->bindValue(7, $user->ativo);
+                $statement->bindValue(1, $usuario->cpf);
+                $statement->bindValue(2, $usuario->nome);
+                $statement->bindValue(3, $usuario->email);
+                $statement->bindValue(4, $usuario->senha);
+                $statement->bindValue(5, $usuario->nascimento);
+                $statement->bindValue(6, $usuario->rg);
+                $statement->bindValue(7, $usuario->ativo);
+                $statement->bindValue(8, $usuario->contrato);
+                $statement->bindValue(7, $usuario->ativo);
+
 
                 $statement->execute();
 
@@ -32,7 +35,19 @@
                 echo "ocorreram erros ao inserir o usuário";
                 echo $e;
             }
-            
+
+        public function search() {
+            try {
+                $statement = $this->connection->prepare("SELECT * FROM Usuarios");
+                $statement->execute();
+                $dados = $statement->fetchAll();
+                $this->connection = null;
+
+                return $dados;
+            } catch (PDOException $e) {
+                echo "Ocorreram erros ao buscar os usuários";
+                echo $e;
+            }
         }
-    }
-    ?>
+    } 
+?>

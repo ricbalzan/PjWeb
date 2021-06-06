@@ -10,9 +10,9 @@
             if (!isset(self::$instance)) {
                 try {
                     self::$instance = new ConnectionDB(
-                        "mysql:dbname=aula_php;host=localhost",
+                        "mysql:dbname=pjweb;host=localhost",
                         "root",
-                        ""
+                        "3mbvg20p"
                     );
                     echo "conexão com o banco de dados efetuada com sucesso!";
                 } catch (Exception $e) {

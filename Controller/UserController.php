@@ -5,16 +5,8 @@
     include '../Model/Usuario.php';
     include '../Include/UserValidate.php';
 
-    
-
-    if ( (!empty($_POST['txtCpf'])) &&
-        (!empty($_POST['txtNome'])) &&
-        (!empty($_POST['txtEmail'])) &&
-        (!empty($_POST['txtSenha'])) &&
-        (!empty($_POST['txtRg'])) &&
-        (!empty($_POST['txtAtivo']))        )
-        { 
-            $erros = array();
+    function criar() {
+        $erros = array();
 
             if(!EmailValidate::testarEmail($_POST['txtEmail'])){
                 $erros[] = 'E-mail inválido';
@@ -33,25 +25,54 @@
                 $usuario->senha = $_POST['txtSenha'];
                 $usuario->rg = $_POST['txtRg'];
                 $usuario->ativo=$_POST['txtAtivo'];
-              
-                echo "Usuário $usuario->nome cadastrado com sucesso<br>";
-                     header("location:../View/User/detail.php?".
-                    "user=$usuario->nome&"."mail=$usuario->email");
+                $usuario->contrato = $_POST['txtcontrato'];
+                $usuario->tipo = $_POST['txttipo'];
+
+                $userDao = new UserDAO();
+                $userDao -> create($usuario);
+             
+                $_SESSION['user'] = $usuario->nome;
+                $_SESSION['mail'] = $usuario->email;
+                header("location:../View/User/detail.php");
             }
             else {
                 //echo "Ocorreram erros ao cadastrar o usuário<br>";
                 $err = serialize($erros);
-                header("location:../View/User/error.php?erros=$err"); 
+                $_SESSION ['erros'] = $err;
+                header("location:../View/User/error.php"); 
             }
-            
-            
-            echo "Parabéns, todos os campos foram preenchidos.";
+    }
+    
+    function listar() {
+        echo "metodo listar";
+    }
+
+    function atualizar() {
+        echo "metodo atualizar";
+    }
+
+    function deletar() {
+        echo "metodo deletar";
+    }
+
+    $operacao = $_GET ['operation'];
+        if (isset($operacao)){
+            switch($operacao) {
+                case 'cadastrar':
+                    criar();
+                    break;
+                case 'consultar':
+                    listar();
+                    break;      
+                case 'atualizar':
+                    atualizar();
+                    break;
+                case 'deletar':
+                    deletar();
+                    break;
+            }
         }
-        else{
-             //echo "OOPS!! é obrigatorio informar todos os campos.";
-            $erros = array();
-            $erros[] = 'Informe todos os campos';
-            $err = serialize($erros);
-        }
+
+           
            
 ?>
