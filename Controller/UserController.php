@@ -4,6 +4,7 @@
 
     include '../Model/Usuario.php';
     include '../Include/UserValidate.php';
+    include '../Dao/UserDAO.php';
 
     function criar() {
         $erros = array();
@@ -17,7 +18,7 @@
             }
 
             if (count($erros) == 0) {
-                $usuario = new Usuario();
+                $usuario = new usuario();
 
                 $usuario->cpf = $_POST['txtCpf'];
                 $usuario->nome = $_POST['txtNome'];
@@ -28,8 +29,8 @@
                 $usuario->contrato = $_POST['txtcontrato'];
                 $usuario->tipo = $_POST['txttipo'];
 
-                $userDao = new UserDAO();
-                $userDao -> create($usuario);
+                $UserDao = new UserDAO();
+                $UserDao -> create($usuario);
              
                 $_SESSION['user'] = $usuario->nome;
                 $_SESSION['mail'] = $usuario->email;

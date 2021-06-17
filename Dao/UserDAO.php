@@ -22,7 +22,7 @@
                 $statement->bindValue(6, $usuario->rg);
                 $statement->bindValue(7, $usuario->ativo);
                 $statement->bindValue(8, $usuario->contrato);
-                $statement->bindValue(7, $usuario->ativo);
+                $statement->bindValue(7, $usuario->tipo);
 
 
                 $statement->execute();
@@ -36,9 +36,11 @@
                 echo $e;
             }
 
+        }
+        
         public function search() {
             try {
-                $statement = $this->connection->prepare("SELECT * FROM Usuarios");
+                $statement = $this->connection->prepare("SELECT * FROM usuario");
                 $statement->execute();
                 $dados = $statement->fetchAll();
                 $this->connection = null;
