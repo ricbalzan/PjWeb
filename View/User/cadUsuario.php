@@ -17,7 +17,7 @@
     <body background="/View/images/fundo.jpg">
 
        
-
+            <form action="../../Controller/UserController.php?operation=cadastrar" method="post" name="form_user">
 
                 <div class="container" id="homer">
                     <div class="container col-xs-12 col-sm-6 col-md-6 col-lg-12">
@@ -63,7 +63,7 @@
 
                 <div class="col-md-2" id="txtcontrato">
                     <label for="txtContrato">Numero do Contrato:</label>
-                    <input required type="text" class="form-control" name="txtcontrato" id="txtContrato" /><br><br>
+                    <input required type="text" class="form-control" name="txtContrato" id="txtContrato" /><br><br>
                 </div>
 
 
@@ -78,7 +78,7 @@
                     <button type="submit" class="btn btn-primary"> Cadastrar</button>
                     <button type="reset" class="btn btn-primary"> Limpar </button>
                 </div>
-
+                
             </div>
             <br>
         </div>

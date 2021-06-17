@@ -26,8 +26,8 @@
                 $usuario->senha = $_POST['txtSenha'];
                 $usuario->rg = $_POST['txtRg'];
                 $usuario->ativo=$_POST['txtAtivo'];
-                $usuario->contrato = $_POST['txtcontrato'];
-                $usuario->tipo = $_POST['txttipo'];
+                $usuario->contrato = $_POST['txtContrato'];
+                $usuario->tipo = $_POST['txtTipo'];
 
                 $UserDao = new UserDAO();
                 $UserDao -> create($usuario);
@@ -45,7 +45,11 @@
     }
     
     function listar() {
-        echo "metodo listar";
+        $UserDao = new UserDAO;
+        $usuario = UserDAO->search();
+
+        $_SESSION['users'] = serialize($usuario);
+        header("location:../View/User/listaUsuario.php");
     }
 
     function atualizar() {
