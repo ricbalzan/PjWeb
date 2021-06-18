@@ -37,7 +37,7 @@
             }
 
         }
-        
+
         public function search() {
             try {
                 $statement = $this->connection->prepare("SELECT * FROM usuario");
@@ -46,6 +46,20 @@
                 $this->connection = null;
 
                 return $dados;
+            } catch (PDOException $e) {
+                echo "Ocorreram erros ao buscar os usuários";
+                echo $e;
+            }
+        }
+
+
+        public function delete() {
+            try {
+                $statement = $this->connection->prepare("DELETE FROM usuario WHERE id = ?");
+                $statement->bindValue(1, $id)
+                $statement->execute();
+
+                $this->connection = null;
             } catch (PDOException $e) {
                 echo "Ocorreram erros ao buscar os usuários";
                 echo $e;
