@@ -16,9 +16,9 @@
             $users = unserialize($_SESSION['users']);
 
             foreach($users as $u) {
-                $id = $u['id'];
+                $cpf = $u['cpf'];
                 $nomeCompleto = $u['nome'].' '.$u['sobrenome'];
-                echo "<tr><td><a href='../../Controller/UserController.php?operation=deletar&id=$id'>Deletar</a></td> - $nomeCompleto<br></tr> ";
+                echo "<tr><td><a href='../../Controller/UserController.php?operation=deletar&id=$cpf'>Deletar</a></td> - $nomeCompleto<br></tr> ";
             }
             unset($_SESSION['user']);
 

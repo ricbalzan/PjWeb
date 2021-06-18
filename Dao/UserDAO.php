@@ -55,8 +55,8 @@
 
         public function delete() {
             try {
-                $statement = $this->connection->prepare("DELETE FROM usuario WHERE id = ?");
-                $statement->bindValue(1, $id)
+                $statement = $this->connection->prepare("DELETE FROM usuario WHERE cpf = ?");
+                $statement->bindValue(1, $cpf);
                 $statement->execute();
 
                 $this->connection = null;

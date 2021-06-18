@@ -57,10 +57,10 @@
     }
 
     function deletar() {
-        $id = $_GET['id'];
-        if (isset($id)) {
+        $cpf = $_GET['cpf'];
+        if (isset($cpf)) {
             $UserDao = new UserDAO();
-            $UserDao->delete($id);
+            $UserDao->delete($cpf);
             header("location:../../Controller/UserController.php?operation=consultar");
         }
         else {
@@ -84,8 +84,5 @@
                     deletar();
                     break;
             }
-        }
-
-           
-           
+        }     
 ?>
