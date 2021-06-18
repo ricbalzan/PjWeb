@@ -6,7 +6,6 @@
     include '../Include/UserValidate.php';
     include '../Dao/UserDAO.php';
 
-    
     function criar() {
         $erros = array();
 
