@@ -11,8 +11,8 @@
                 try {
                     self::$instance = new ConnectionDB(
                         "mysql:dbname=pjweb;host=localhost",
-                        "root",
-                        "3mbvg20p"
+                        "pjweb",
+                        "Pf#00ixu2"
                     );
                     echo "conexão com o banco de dados efetuada com sucesso!";
                 } catch (Exception $e) {
