@@ -3,7 +3,8 @@
     session_start();
 
     include '../Model/Simcard.php';
-
+    include '../Include/UserValidate.php';
+    include '../Dao/UserDAO.php';
     
 
     if ( (!empty($_POST['txtNumero'])) &&
