@@ -10,10 +10,9 @@
             if (!isset(self::$instance)) {
                 try {
                     self::$instance = new ConnectionDB(
-                        "mysql:dbname=pjweb;
-                        host=localhost",
+                        "mysql:dbname=pjweb;host=localhost",
                         "pjweb",
-                        "Pf#00ixu2"
+                        "Pf#00ixu"
                     );
                     echo "conexão com o banco de dados efetuada com sucesso!";
                 } catch (Exception $e) {
