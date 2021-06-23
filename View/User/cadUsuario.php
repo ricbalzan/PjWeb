@@ -14,7 +14,7 @@
 <br>
 <br>
  
-    <body background="/View/images/fundo.jpg">
+    <body background="/View/images/fundo.jpg"; background-size: 100% auto; >
 
        
             <form action="../../Controller/UserController.php?operation=cadastrar" method="post" name="form_user">
