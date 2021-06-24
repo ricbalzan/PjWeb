@@ -2,10 +2,11 @@
 
     session_start();
 
-    include '../Model/Simcard.php';
-    include '../Include/UserValidate.php';
-    include '../Dao/UserDAO.php';
+    include '../Model/Numero.php';
+    include '../Dao/LinhaDAO.php';
     
+
+    function () {
 
     if ( (!empty($_POST['txtNumero'])) &&
         (!empty($_POST['txtSim'])) &&
@@ -15,30 +16,66 @@
 
          
             if (count($erros) == 0) {
-                $simcard = new SimCard();
+                $linhas = new linhas();
 
-                $simcard->numero = $_POST['txtNumero'];
-                $simcard->sim = $_POST['txtSim'];
-                $simcard->cadastro = $_POST['txtcadastro'];
+                $linhas->numero = $_POST['txtNumero'];
+                $linhas->sim = $_POST['txtSim'];
+                $linhas->cadastro = $_POST['txtcadastro'];
                
 
-                //echo "Usuário $usuario->nome cadastrado com sucesso<br>";
+                //echo "Usuário $linhas->numero cadastrado com sucesso<br>";
                 header("location:../View/User/detail.php?".
-                        "user=$simcard->numero");
+                        "user=$linhas->numero");
             }
             else {
                 //echo "Ocorreram erros ao cadastrar o usuário<br>";
                 $err = serialize($erros);
                 header("location:../View/User/error.php?erros=$err"); 
             }
-            
-            echo "Parabéns, todos os campos foram preenchidos.";
+
         }
-        else{
-             //echo "OOPS!! é obrigatorio informar todos os campos.";
-            $erros = array();
-            $erros[] = 'Informe todos os campos';
-            $err = serialize($erros);
-           
-        }   
+        
+    } 
+
+    function listar() {
+        $LinhaDao = new LinhaDAO;
+        $linhas = $LinhaDao->search();
+
+        $_SESSION['linhas'] = serialize($linhas);
+        header("location:../View/User/listaUsuario.php");
+    }
+
+    function atualizar() {
+        echo "metodo atualizar";
+    }
+
+    function deletar() {
+        $numero = $_GET['numero'];
+        if (isset($numero)) {
+            $LinhaDao = new LinhaDAO();
+            $LinhaDao->delete($numero);
+            header("location:../../Controller/SimController.php?operation=consultar");
+        }
+        else {
+            echo "Linha informada não existe";
+        }
+    }
+
+    $operacao = $_GET ['operation'];
+        if (isset($operacao)){
+            switch($operacao) {
+                case 'cadastrar':
+                    criar();
+                    break;
+                case 'consultar':
+                    listar();
+                    break;      
+                case 'atualizar':
+                    atualizar();
+                    break;
+                case 'deletar':
+                    deletar();
+                    break;
+            }
+        }     
 ?>

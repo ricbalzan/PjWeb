@@ -11,7 +11,7 @@
         public function create($usuario) {
             try {
                 $statement = $this->connection->prepare(
-                    "INSERT INTO usuario (cpf, nome, email, senha, nascimento, rg, ativo, contrato, tipo;) VALUES (?,?,?,?,?,?,?,?,?)"
+                    "INSERT INTO usuario (cpf, nome, email, senha, nascimento, rg, ativo, contrato, tipo) VALUES (?,?,?,?,?,?,?,?,?)"
                 );
 
                 $statement->bindValue(1, $usuario->cpf);
@@ -22,7 +22,7 @@
                 $statement->bindValue(6, $usuario->rg);
                 $statement->bindValue(7, $usuario->ativo);
                 $statement->bindValue(8, $usuario->contrato);
-                $statement->bindValue(7, $usuario->tipo);
+                $statement->bindValue(9, $usuario->tipo);
 
 
                 $statement->execute();
@@ -53,7 +53,7 @@
         }
 
 
-        public function delete() {
+        public function delete($cpf) {
             try {
                 $statement = $this->connection->prepare("DELETE FROM usuario WHERE cpf = ?");
                 $statement->bindValue(1, $cpf);

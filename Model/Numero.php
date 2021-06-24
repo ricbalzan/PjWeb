@@ -1,7 +1,7 @@
 
 <?php
 
-class SimCard{
+class linhas{
     
     var $numero;
     var $sim;

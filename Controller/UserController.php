@@ -3,6 +3,7 @@
     session_start();
 
     include '../Model/Usuario.php';
+    include '../Controller/UserController.php';
     include '../Include/UserValidate.php';
     include '../Dao/UserDAO.php';
 
@@ -26,11 +27,13 @@
                 $usuario->senha = $_POST['txtSenha'];
                 $usuario->rg = $_POST['txtRg'];
                 $usuario->ativo=$_POST['txtAtivo'];
+                $usuario->nascimento=$_POST['txtNascimento'];
                 $usuario->contrato = $_POST['txtContrato'];
                 $usuario->tipo = $_POST['txtTipo'];
 
                 $UserDao = new UserDAO();
-                $UserDao -> create($usuario);
+                $UserDao->create($usuario);
+                var_dump($UserDao);die();
              
                 $_SESSION['user'] = $usuario->nome;
                 $_SESSION['mail'] = $usuario->email;
