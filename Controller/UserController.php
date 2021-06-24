@@ -3,7 +3,6 @@
     session_start();
 
     include '../Model/Usuario.php';
-    include '../Controller/UserController.php';
     include '../Include/UserValidate.php';
     include '../Dao/UserDAO.php';
 
@@ -52,7 +51,7 @@
         $usuario = $UserDao->search();
 
         $_SESSION['users'] = serialize($usuario);
-        header("location:../View/User/listaUsuario.php");
+        header("location:../View/User/listarUsuario.php");
     }
 
     function atualizar() {
