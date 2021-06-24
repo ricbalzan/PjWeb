@@ -27,7 +27,7 @@
 
                 $statement->execute();
 
-                //var_dump($statement); die();
+                var_dump($statement); die();
 
                 //encerra a conexão
                 $this->connection = null;
