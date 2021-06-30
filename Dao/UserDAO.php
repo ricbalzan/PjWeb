@@ -68,11 +68,16 @@
 
         public function find($cpf, $senha) {
             try {
-                $statement = $this->connection->prepare("SELECT * FROM usuario WHERE cpf = ? and password = ?");
+               // echo $cpf."<br>";
+               // echo $senha."<br>";
+                $statement = $this->connection->prepare("SELECT * FROM usuario WHERE cpf = ? and senha = ?");
                 $statement->bindValue(1, $cpf);
                 $statement->bindValue(2, $senha);
                 $statement->execute();
                 $user = $statement->fetchAll();
+
+                   // var_dump($user);
+                   // die();
 
                 $this->connection = null;
 

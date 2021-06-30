@@ -12,7 +12,7 @@
     
         <form class="form-signin text-center" action="../Controller/AuthController.php?operation=login" method="post" name="form_user">
             
-            <input required type="text" name="txCpf" id="txtCpf" placeholder="CPF" /><br><br>
+            <input required type="text" name="txtCpf" id="txtCpf" placeholder="CPF" /><br><br>
 
             <input required type="password" name="txtSenha" id="txtSenha" placeholder="Senha" /><br><br>
 
