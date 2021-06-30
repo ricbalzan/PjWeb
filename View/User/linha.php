@@ -18,7 +18,7 @@
 
     <body background="/View/images/fundo.jpg" class="img-fluid" alt="Imagem responsiva">
 
-    <form action="../../Controller/SimController.php" method="post" name="form_sim">
+    <form action="../../Controller/SimController.php?operation=cadastrar" method="post" name="form_sim">
 
     <div class="container" id="homer">
                     <div class="container col-xs-12 col-sm-6 col-md-6 col-lg-12">

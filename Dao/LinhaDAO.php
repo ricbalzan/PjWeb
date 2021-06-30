@@ -1,7 +1,7 @@
 <?php
     include '../Persistence/ConnectioDB.php';
 
-    class UserDAO {
+    class LinhaDAO {
         private $connection = null;
 
         public function __construct() {
@@ -22,7 +22,7 @@
 
                 $statement->execute();
 
-               //var_dump($statement); die();
+               var_dump($statement); die();
 
                 //encerra a conexão
                 $this->connection = null;

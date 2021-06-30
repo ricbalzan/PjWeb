@@ -3,19 +3,18 @@
     session_start();
 
     include '../Model/Usuario.php';
-    include '../Include/UserValidate.php';
     include '../Dao/UserDAO.php';
 
     function criar() {
         $erros = array();
 
-            if(!EmailValidate::testarEmail($_POST['txtEmail'])){
-                $erros[] = 'E-mail inválido';
-            }
+         //   if(!EmailValidate::testarEmail($_POST['txtEmail'])){
+           //     $erros[] = 'E-mail inválido';
+           // }
 
-            if(!ValidaCPF::testarCPF($_POST['txtCpf'])){
-                $erros[] = 'CPF inválido';
-            }
+           // if(!ValidaCPF::testarCPF($_POST['txtCpf'])){
+            //    $erros[] = 'CPF inválido';
+           // }
 
             if (count($erros) == 0) {
                 $usuario = new usuario();

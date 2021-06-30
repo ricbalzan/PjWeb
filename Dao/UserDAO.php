@@ -65,5 +65,23 @@
                 echo $e;
             }
         }
+
+        public function find($cpf, $senha) {
+            try {
+                $statement = $this->connection->prepare("SELECT * FROM usuario WHERE cpf = ? and password = ?");
+                $statement->bindValue(1, $cpf);
+                $statement->bindValue(2, $senha);
+                $statement->execute();
+                $user = $statement->fetchAll();
+
+                $this->connection = null;
+
+                return $user;
+            } catch (PDOException $e) {
+                echo "ocorreram erros ao procurar o usuario";
+                echo $e;
+            }
+        }
+        
     } 
 ?>
