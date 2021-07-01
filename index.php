@@ -6,10 +6,12 @@
         <title> Tela de login</title>
 
     </head>
-    <body>
+    <body background="/View/images/fundo.jpg"; background-size: 100% auto; >
     <br>
     <br>
-    
+    <br>
+    <br>
+
         <form class="form-signin text-center" action="../Controller/AuthController.php?operation=login" method="post" name="form_user">
             
             <input required type="text" name="txtCpf" id="txtCpf" placeholder="CPF" /><br><br>

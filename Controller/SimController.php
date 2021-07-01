@@ -13,7 +13,7 @@
         { 
             $erros = array();
 
-            //var_dump($erros); die();
+            var_dump($erros); die();
          
             if (count($erros) == 0) {
                 $linhas = new linhas();
