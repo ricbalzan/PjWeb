@@ -1,3 +1,7 @@
+
+<?php 
+include("../../Menu.php"); 
+?> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,6 +13,7 @@
                 <p class="mb-0"><h1>Cadastro de Usuários</h1></p>
             </blockquote>
         <link rel="stylesheet" type="text/css" href="../templates/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="../templates/bootstrap/css/menu.css" />
     </head>
 <br>
 <br>

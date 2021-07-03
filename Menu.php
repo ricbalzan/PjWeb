@@ -4,53 +4,29 @@
 
 <link rel="stylesheet" type="text/css" href="View/templates/bootstrap/css/menu.css" />
 <body>
-  <h1>Menu PJ Móvel</h1>
   
   
 <nav class="navbar" role='navigation'>
     
-  <ul class="menu no-js">
-    <li class="menu-item"><a href="Menu.php" class="active">Inicio</a></li>
-    <li class="menu-item"><a href="#">Cadastros</a>
-      <ul class="sub-menu">
-        <li class="menu-item"><a href="#">Usuários</a></li>
-        <li class="menu-item"><a href="#">Linhas</a></li>
-        <li class="menu-item">
-            <a href="#">Menu Item</a>
-            <ul class="sub-menu">
-              <li class="menu-item"><a href="#">Menu Item</a></li>
-              <li class="menu-item"><a href="#">Menu Item</a></li>
-              <li class="menu-item"><a href="#">Menu Item</a></li>
-              <li class="menu-item"><a href="#">Menu Item</a></li>
-              <li class="menu-item"><a href="#">Menu Item</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Menu Item</a></li>
-                  <li class="menu-item"><a href="#">Menu Item</a></li>
-                  <li class="menu-item"><a href="#">Menu Item</a></li>
-                  <li class="menu-item"><a href="#">Menu Item</a></li>
-                </ul>  
-              </li>
-              <li class="menu-item"><a href="#">Menu Item</a></li>
-              <li class="menu-item"><a href="#">Menu Item</a></li>
-            </ul>
-        </li>
-        <li class="menu-item"><a href="#">Menu Item</a></li>
-        <li class="menu-item"><a href="#">Menu Item</a></li>
-        <li class="menu-item"><a href="#">Menu Item</a></li>
-        <li class="menu-item"><a href="#">Menu Item</a></li>
-      </ul>
-    </li>
+<ul class="menu">
 
-     <li class="menu-item"><a href="#">Menu Item</a> 
-      <ul class="sub-menu">
-        <li class="menu-item"><a href="#">Menu Item</a></li>
-        <li class="menu-item"><a href="#">Menu Item</a></li>
-        <li class="menu-item"><a href="#">Menu Item</a></li>
-        <li class="menu-item"><a href="#">Menu Item</a></li>
-      </ul>  
-    </li>
+  <li title="home"><a href="#" class="menu-button home">menu</a></li>
 
-     <li class="menu-item"><a href="#">Menu Item</a></li>
+  <li title="Cadastro de Usuario"><a href="../User/cadUsuario.php" class="active about">Incluir Usuários</a></li>
+  <li title="Cadastro de Linhas"><a href="../Sim/linha.php" class="pencil">Linhas</a></li>
+  <li title="Listagem de Usuário"><a href="#" class="active about">archive</a></li>
+  <li title="Listagem de linhas"><a href="#" class="archive">archive</a></li>
+  <li title="contact"><a href="#" class="contact">contact</a></li>
+  <li title="Sair"><a href="../../Controller/AuthController.php?operation=logout" class="logout">Sair</a></li>
+</ul>
+
+<ul class="menu-bar">
+  <li><a href="#" class="menu-button">Menu</a></li>
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Profile</a></li>
+  <li><a href="#">Editorial</a></li>
+  <li><a href="#">About</a></li>
+</ul>
 
   </ul>
 </nav>  

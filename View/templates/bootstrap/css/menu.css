@@ -1,198 +1,142 @@
-@charset "UTF-8";
-/* setup */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  transition: all 60ms ease;
-}
-
-/* variables */
-.menu ul a, .menu ul li {
-  display: block;
-  position: relative;
-}
-
-.menu a, .menu li {
-  display: inline-block;
-  position: relative;
-}
-
-/* 
-Essential Styles 
-- - - - - - - - - - - -
-I like to keep the specificity low by using tags to make it easy to override the basic strucuture, if needed.  Adding an id to the root element would offer more isolation.
-
-*/
-.menu {
-  postion: relative;
-  list-style: none;
-  float: left;
-  padding: 0;
-  margin: 0;
-  *zoom: 1;
-}
-.menu li {
-  float: left;
-}
-.menu a {
-  height: 3rem;
-  line-height: 3rem;
-  width: 100%;
-}
-.menu ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0px;
-  width: 180px;
-  min-width: 180px;
-  padding: 0;
-  margin: 0;
-}
-.menu ul ul {
-  top: -0.35rem;
-  left: 100%;
-}
-.menu ul li {
-  float: left;
-  width: 100%;
-}
-.menu ul a {
-  height: 2rem;
-  line-height: 2rem;
-}
-.menu li:hover > .sub-menu {
-  display: block;
-}
-.menu:before, .menu:after {
-  content: " ";
-  display: table;
-}
-.menu:after {
-  clear: both;
-}
-
-/* THEME  */
-.navbar {
-  background: #d2d7d3;
-  *zoom: 1;
-}
-.navbar:before, .navbar:after {
-  content: " ";
-  display: table;
-}
-.navbar:after {
-  clear: both;
-}
-
-.menu {
-  width: 100%;
-  /* Change this in order to change the Dropdown symbol */
-}
-.menu li {
-  border-right: 1px dotted #ececec;
-  width: 25%;
-}
-.menu li:last-child {
-  border-right: none;
-}
-.menu a {
-  color: #6c7a89;
-  font-size: 0.75rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 0 0.75rem;
-}
-.menu a:hover, .menu a.active {
-  color: #f2784b;
-  /* border-bottom: 1px solid; */
-}
-.menu li > a:after, .menu .sub-menu li > a:after {
-  line-height: 1em;
-  font-size: 6px;
-  padding-left: 6px;
-  position: relative;
-  top: -2px;
-}
-.menu .sub-menu li > a:after {
-  content: " ▶";
-}
-.menu li > a:after {
-  content: " ▼";
-}
-.menu li > a:only-child:after,
-.menu .sub-menu li > a:only-child:after {
-  content: "";
-}
-.menu .sub-menu {
-  background: #34495e;
-  padding: 0.35rem 0.25rem 0.25rem;
-}
-.menu .sub-menu li {
-  border-right: none;
-}
-.menu .sub-menu a {
-  color: #f2f1ef;
-  /* padding: 0.35rem ($menuHeight / 2); */
-}
-.menu .sub-menu a:hover {
-  background: #2c3e50;
-  border-bottom: none;
-}
-.menu .sub-menu:before {
-  content: "";
-  border-bottom: 14px solid #34495e;
-  border-right: 14px solid transparent;
-  position: absolute;
-  top: -14px;
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
+.menu,
+.menu-bar {
+  position: fixed;
+  bottom: 0;
   left: 0;
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
 }
-.menu .sub-menu .sub-menu {
-  background: #2c3e50;
+.menu li a {
+  display: inline-block;
+  text-indent: -500em;
+  height: 5em;
+  width: 5em;
+  line-height: 5em;
+  text-align: center;
+  color: #72739f;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background 0.1s ease-in-out;
 }
-.menu .sub-menu .sub-menu:before {
-  content: " ";
-  border-right: 14px solid #2c3e50;
-  border-bottom: 14px solid transparent;
+.menu li a:before {
+  font-family: FontAwesome;
+  text-indent: 0em;
   position: absolute;
-  top: 0;
-  left: -14px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.4em;
 }
-.menu .sub-menu .sub-menu li a:hover,
-.menu .sub-menu .sub-menu li a:active {
-  background: #34495e;
+.menu li a.search:before {
+  content: "\f002";
 }
-.menu .active,
-.menu .current_page_item a,
-.menu .current-menu-item a {
-  color: #6c7a89;
+.menu li a.archive:before {
+  content: "\f187";
 }
-
-/* DEMO PAGE STYLE */
-html {
-  padding: 40px;
-  background: #ecf0f1;
+.menu li a.pencil:before {
+  content: "\f040";
 }
-
-h1 {
-  color: #2c3e50;
-  text-transform: uppercase;
+.menu li a.contact:before {
+  content: "\f003";
+}
+.menu li a.about:before {
+  content: "\f007";
+}
+.menu li a.home:before {
+  content: "\f039";
+}
+.menu li a.home:logout {
+  content: "\191";
+}
+.menu-bar li a:hover,
+.menu li a:hover,
+.menu li:first-child a {
+  background: #267fdd;
+  color: #fff;
+}
+.menu-bar {
+  overflow: hidden;
+  left: 5em;
+  z-index: 5;
+  width: 0;
+  height: 0;
+  transition: all 0.1s ease-in-out;
+}
+.menu-bar li a {
+  display: block;
+  height: 4em;
+  line-height: 4em;
   text-align: center;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: 10px;
-  margin: 48px auto 0;
+  color: #72739f;
+  text-decoration: none;
+  position: relative;
+  font-family: verdana;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background 0.1s ease-in-out;
+}
+.menu-bar li:first-child a {
+  height: 5em;
+  background: #267fdd;
+  color: #fff;
+  line-height: 5;
 }
 
-h1 + p {
-  font-size: 14px;
-  font-family: serif;
-  font-style: italic;
-  color: #b5bfc1;
-  text-align: center;
-  border-top: 1px dotted #ccc;
-  width: 360px;
-  padding: 12px;
-  margin: 12px auto 48px;
+.para {
+  color: #033f72;
+  padding-left: 100px;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.open {
+  width: 10em;
+  height: 100%;
+}
+
+@media all and (max-width: 500px) {
+  .container {
+    margin-top: 100px;
+  }
+  .menu {
+    height: 5em;
+    width: 100%;
+  }
+  .menu li {
+    display: inline-block;
+  }
+  .menu-bar li a {
+    width: 100%;
+  }
+  .menu-bar {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 0;
+  }
+  .open {
+    width: 100%;
+    height: auto;
+  }
+  .para {
+    padding-left: 5px;
+  }
+}
+@media screen and (max-height: 34em) {
+  .menu li,
+  .menu-bar {
+    font-size: 70%;
+  }
+}
+@media screen and (max-height: 34em) and (max-width: 500px) {
+  .menu {
+    height: 3.5em;
+  }
 }

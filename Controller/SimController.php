@@ -7,21 +7,24 @@
     
 
     function criar(){
-    if ( (!empty($_POST['txtNumero'])) &&
-        (!empty($_POST['txtSim'])) &&
-        (!empty($_POST['txtcadastro'])))
-        { 
-            $erros = array();
+        $erros = array();
 
-            var_dump($erros); die();
+             // var_dump($erros); die();
          
             if (count($erros) == 0) {
                 $linhas = new linhas();
 
                 $linhas->numero = $_POST['txtNumero'];
                 $linhas->sim = $_POST['txtSim'];
-                $linhas->data = $_POST['txtcadastro'];
-               
+                $linhas->data = $_POST['txtCadastro'];
+                
+
+                
+                $LinhaDao = new LinhaDAO();
+                $LinhaDao->create($linhas);
+               // var_dump($LinhaDao);die();
+             
+
 
                 echo "Usuário $linhas->numero cadastrado com sucesso<br>";
                 header("location:../View/User/detail.php?".
@@ -34,7 +37,6 @@
             }
         } 
      
-    }
 
     function listar() {
         $LinhaDao = new LinhaDAO;
