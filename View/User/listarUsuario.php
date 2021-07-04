@@ -40,15 +40,15 @@
                 $table .= '</thead>';
                 $table .= '<tbody>';
 
-                foreach ($usuario as $u) {
+                foreach ($usuario as $key => $usuario) {
                   $table .= '<tr>';
 
-                  $cpf = $u['cpf'];
-                  $nomeCompleto = $u['nome'];
-                  $rg = $u['rg'];
-                  $tipo = $u['tipo'];
-                  $ativo = $u['ativo'];
-                  $contrato = $u['contrato'];
+                  $cpf = $usuario['cpf'];
+                  $nomeCompleto = $usuario['nome'];
+                  $rg = $usuario['rg'];
+                  $tipo = $usuario['tipo'];
+                  $ativo = $usuario['ativo'];
+                  $contrato = $usuario['contrato'];
 
                       $table .= "<td>$cpf</td>";
                       $table .= "<td>$nomeCompleto</td>";
