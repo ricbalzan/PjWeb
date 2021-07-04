@@ -13,26 +13,50 @@
     </head>
 
 
-
     <body>
         <?php
         if (isset($_SESSION['linhas'])) {
-            include_once '../../Model/linha.php';
+            include_once '../../Model/Numero.php';
 
             $linhas = array();
             $linhas = unserialize($_SESSION['linhas']);
 
-            foreach($linhas as $l) {
-                $numero = $l['numero'];
-                $nomeCompleto = $u['nome'];
-                echo $nomeCompleto;
-                echo $numero;
-                echo "<tr><td><a href='../../Controller/SimController.php?operation=deletar&id=$numero'>Deletar</a></td> - $nomeCompleto<br></tr> ";
-            }
-            unset($_SESSION['user']);
             
-        }
-        
+              // montagem do html da tabela     
+              $table  = '<table class="table">';
+              $table .= '<thead class="thead-dark">';
+              $table .= '<tr>';
+              $table .= '<td>              Número</td>';
+              $table .= '<td>Sim Card</td>';
+              $table .= '<td>Data</td>';
+              $table .= '<td>Editar</td>';
+              $table .= '<td>Excluir</td>';
+              $table .= '</tr>';
+              $table .= '</thead>';
+              $table .= '<tbody>';
+              
+              foreach($linhas as $l) {
+                $table.= '<tr>';
+                  $numero = $l['numero'];
+                  $sim = $l['sim'];
+                  $data = $l['data'];
+
+                      $table .='           '."<td><input type='checkbox' value='{$numero}'></td>";
+                      $table .= "<td>$sim</td>";
+                      $table .= "<td>$data</td>";
+                      $table .= "<td><a class='bnt btn-info' href='../../Controller/SimController.php?operation=alterar&id=$cpf'>Editar</a></td>";
+                      $table .= "<td><a class='bnt btn-info' href='../../Controller/SimController.php?operation=deletar&id=$cpf'>Excluir</a></td>";
+                  $table .= '</tr>';
+              }
+      }
+
+              // fecahamento do html
+           $table .= '</tbody>';
+           $table .= '</table>';
+
+// exibição na tela
+            echo $table;
+            
         ?>
     </body>
 

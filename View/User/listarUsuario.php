@@ -2,7 +2,6 @@
     session_start();
     include("../../Menu.php"); 
 ?>
-
 <html>
 
 
@@ -18,36 +17,33 @@
 
 
     <body>
+
         <?php
 
-    
-      if (isset($_SESSION['usuario'])) {
+          if (isset($_SESSION['usuario'])) {
             include_once '../../Model/Usuario.php';
             //var_dump($users).die;
             $usuario = array();
             $usuario = unserialize($_SESSION['usuario']);
 
-                // montagem do html da tabela
-                
-                
-                $table  = '<table>';
-                $table .= '<thead>';
-                $table .= '<tr>';
-                $table .= '<td>              CPF</td>';
-                $table .= '<td>Nome</td>';
-                $table .= '<td>RG</td>';
-                $table .= '<td>Tipo</td>';
-                $table .= '<td>Ativo</td>';
-                $table .= '<td>Contrato</td>';
-                $table .= '<td>Editar</td>';
-                $table .= '<td>Excluir</td>';
-                $table .= '</tr>';
-                $table .= '</thead>';
-                $table .= '<tbody>';
+              // montagem do html da tabela     
+              $table  = '<table class="table">';
+              $table .= '<thead class="thead-dark">';
+              $table .= '<tr>';
+              $table .= '<td>              CPF</td>';
+              $table .= '<td>Nome</td>';
+              $table .= '<td>RG</td>';
+              $table .= '<td>Tipo</td>';
+              $table .= '<td>Ativo</td>';
+              $table .= '<td>Contrato</td>';
+              $table .= '<td>Editar</td>';
+              $table .= '<td>Excluir</td>';
+              $table .= '</tr>';
+              $table .= '</thead>';
+              $table .= '<tbody>';
               
-                foreach($usuario as $u) {
-                  $table .= '<tr>';
-
+              foreach($usuario as $u) {
+                $table .= '<tr>';
                   $cpf = $u['cpf'];
                   $nomeCompleto = $u['nome'];
                   $rg = $u['rg'];
@@ -74,26 +70,6 @@
 // exibição na tela
             echo $table;
 
-       // if (isset($_SESSION['usuario'])) {
-       //     include_once '../../Model/Usuario.php';
-            //var_dump($users).die;
-       //     $usuario = array();
-       //     $usuario = unserialize($_SESSION['usuario']);
-
-         //   foreach($usuario as $u) {
-           //     $cpf = $u['cpf'];
-             //   $nomeCompleto = $u['nome'];
-               // $tipo = $u['tipo'];
-               // $ativo = $u['ativo'];
-               // echo " Nome:".$nomeCompleto."<br>";
-               // echo "CPF: ".$cpf."<br>";
-               // echo $tipo;
-               // echo $ativo;
-                
-              //  echo "<tr><td><a href='../../Controller/UserController.php?operation=deletar&id=$cpf'>Deletar</a></td> - $nomeCompleto<br></tr> ";
-           // }       
-       // }
-        
      ?>
   </body>
 </html>
