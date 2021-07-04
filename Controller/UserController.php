@@ -31,7 +31,7 @@
 
                 $UserDao = new UserDAO();
                 $UserDao->create($usuario);
-                var_dump($UserDao);die();
+                //var_dump($UserDao);die();
              
                 $_SESSION['user'] = $usuario->nome;
                 $_SESSION['mail'] = $usuario->email;

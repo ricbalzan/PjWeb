@@ -26,7 +26,7 @@
               $table  = '<table class="table">';
               $table .= '<thead class="thead-dark">';
               $table .= '<tr>';
-              $table .= '<td>              Número</td>';
+              $table .= '<td>Número</td>';
               $table .= '<td>Sim Card</td>';
               $table .= '<td>Data</td>';
               $table .= '<td>Editar</td>';
@@ -59,5 +59,4 @@
             
         ?>
     </body>
-
 </html>
