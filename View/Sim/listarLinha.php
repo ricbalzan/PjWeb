@@ -10,53 +10,32 @@
     <head>
         <meta charset="UTF-8">
         <title>Consulta de Linhas</title>
+        <blockquote class="blockquote text-center">
+                <p class="mb-0"><h1>Consulta de Linhas</h1></p>
+            </blockquote>
     </head>
 
 
     <body>
         <?php
-        if (isset($_SESSION['linhas'])) {
+    
+        if (isset($_SESSION['linha'])) {
             include_once '../../Model/Numero.php';
+            var_dump($users).die;
+       $linha = array();
+            $linha = unserialize($_SESSION['linha']);
 
-            $linhas = array();
-            $linhas = unserialize($_SESSION['linhas']);
+           foreach($linha as $l) {
+                $numero = $l['numero'];
+                $sim = $l['sim'];
+                $data = $l['data'];
+                echo " Numero:".$numero."<br>";
+                echo "CPF: ".$sim."<br>";
+                echo $data;
 
-            
-              // montagem do html da tabela     
-              $table  = '<table class="table">';
-              $table .= '<thead class="thead-dark">';
-              $table .= '<tr>';
-              $table .= '<td>Número</td>';
-              $table .= '<td>Sim Card</td>';
-              $table .= '<td>Data</td>';
-              $table .= '<td>Editar</td>';
-              $table .= '<td>Excluir</td>';
-              $table .= '</tr>';
-              $table .= '</thead>';
-              $table .= '<tbody>';
-              
-              foreach($linhas as $l) {
-                $table.= '<tr>';
-                  $numero = $l['numero'];
-                  $sim = $l['sim'];
-                  $data = $l['data'];
-
-                      $table .='           '."<td><input type='checkbox' value='{$numero}'></td>";
-                      $table .= "<td>$sim</td>";
-                      $table .= "<td>$data</td>";
-                      $table .= "<td><a class='bnt btn-info' href='../../Controller/SimController.php?operation=alterar&id=$cpf'>Editar</a></td>";
-                      $table .= "<td><a class='bnt btn-info' href='../../Controller/SimController.php?operation=deletar&id=$cpf'>Excluir</a></td>";
-                  $table .= '</tr>';
-              }
-      }
-
-              // fecahamento do html
-           $table .= '</tbody>';
-           $table .= '</table>';
-
-// exibição na tela
-            echo $table;
-            
+            echo "<tr><td><a href='../../Controller/SimController.php?operation=deletar&id=$numero'>Deletar</a></td> - $numero<br></tr> ";
+            }       
+        }
         ?>
     </body>
 </html>

@@ -19,38 +19,16 @@
 
     <body>
         <?php
-        if (isset($_SESSION['users'])) {
-
-
       if (isset($_SESSION['usuario'])) {
             include_once '../../Model/Usuario.php';
-            //var_dump($users).die;
             $usuario = array();
             $usuario = unserialize($_SESSION['usuario']);
 
-            $users = array();
-            $users = unserialize($_SESSION['users']);
 
-            foreach($users as $u) {
-                $cpf = $u['cpf'];
-                $nomeCompleto = $u['nome'];
-                $tipo = $u['tipo'];
-                echo $nomeCompleto;
-                echo $cpf;
-                echo $tipo;
-                //var_dump($users).die;
-                echo "<tr><td><a href='../../Controller/UserController.php?operation=deletar&id=$cpf'>Deletar</a></td> - $nomeCompleto<br></tr> ";
-            }
-
-        }
-
-                // montagem do html da tabela
-
-
-                $table  = '<table>';
-                $table .= '<thead>';
+                $table  = '<table class="table">';
+                $table .= '<thead class="thead-dark">';
                 $table .= '<tr>';
-                $table .= '<td>              CPF</td>';
+                $table .= '<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCPF</td>';
                 $table .= '<td>Nome</td>';
                 $table .= '<td>RG</td>';
                 $table .= '<td>Tipo</td>';
@@ -72,45 +50,24 @@
                   $ativo = $u['ativo'];
                   $contrato = $u['contrato'];
 
-                      $table .='           '."<td><input type='checkbox' value='{$cpf}'></td>";
+                      $table .= "<td>$cpf</td>";
                       $table .= "<td>$nomeCompleto</td>";
                       $table .= "<td>$rg</td>";
                       $table .= "<td>$tipo</td>";
                       $table .= "<td>{$ativo}</td>";
                       $table .= "<td>{$contrato}</td>";
-                      $table .= "<td><a class='bnt btn-info' href='../../Controller/UserController.php?operation=alterar&id=$cpf'>Editar</a></td>";
-                      $table .= "<td><a class='bnt btn-info' href='../../Controller/UserController.php?operation=deletar&id=$cpf'>Excluir</a></td>";
+                      $table .= "<td><a class='btn btn-primary' href='../../Controller/UserController.php?operation=alterar&id=$cpf'>Editar</a></td>";
+                      $table .= "<td><a class='btn btn-danger' href='../../Controller/UserController.php?operation=deletar&id=$cpf'>Excluir</a></td>";
                   $table .= '</tr>';
               }
       }
-
               // fecahamento do html
-            $table .= '</tbody>';
-            $table .= '</table>';
+    $table .= '</tbody>';
+    $table .= '</table>';
 
 // exibição na tela
             echo $table;
-
-       // if (isset($_SESSION['usuario'])) {
-       //     include_once '../../Model/Usuario.php';
-            //var_dump($users).die;
-       //     $usuario = array();
-       //     $usuario = unserialize($_SESSION['usuario']);
-
-         //   foreach($usuario as $u) {
-           //     $cpf = $u['cpf'];
-             //   $nomeCompleto = $u['nome'];
-               // $tipo = $u['tipo'];
-               // $ativo = $u['ativo'];
-               // echo " Nome:".$nomeCompleto."<br>";
-               // echo "CPF: ".$cpf."<br>";
-               // echo $tipo;
-               // echo $ativo;
-
-              //  echo "<tr><td><a href='../../Controller/UserController.php?operation=deletar&id=$cpf'>Deletar</a></td> - $nomeCompleto<br></tr> ";
-           // }       
-       // }
-
+         
      ?>
   </body>
 </html> 
