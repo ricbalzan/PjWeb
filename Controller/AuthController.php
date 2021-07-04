@@ -12,7 +12,7 @@
 
             if ($user) {
                     $_SESSION['usuario'] = serialize($user);
-                    header("location:../../Menu.php");
+                    header("location:../View/User/cadUsuario.php");
             } 
             else {
                 unset($_SESSION['usuario']);

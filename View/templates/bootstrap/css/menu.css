@@ -1,4 +1,6 @@
 @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
 .menu,
 .menu-bar {
   position: fixed;
@@ -53,8 +55,14 @@
 .menu li a.home:before {
   content: "\f039";
 }
-.menu li a.home:logout {
-  content: "\191";
+.icon-user-plus:before {
+  content: "\e973";
+}
+.icon-exit:before {
+  content: "\2716";
+}
+.icon-profile:before {
+  content: "\1f581";
 }
 .menu-bar li a:hover,
 .menu li a:hover,

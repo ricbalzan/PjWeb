@@ -1,15 +1,17 @@
 <?php
     session_start();
+    include("../../Menu.php"); 
 ?>
-
 <html>
 
-<link rel="stylesheet" type="text/css" href="../templates/bootstrap/css/listarUsuario.css" />
+
 <link rel="stylesheet" type="text/css" href="../templates/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="../templates/bootstrap/css/menu.css" />
     <head>
         <meta charset="UTF-8">
         <title>Consulta de Linhas</title>
     </head>
+
 
 
     <body>

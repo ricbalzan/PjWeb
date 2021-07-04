@@ -6,7 +6,7 @@
         <title> Tela de login</title>
 
     </head>
-    <body background="/View/images/fundo.jpg"; background-size: 100% auto; >
+    <body background="/View/images/fundo.png"; background-size: 100% auto; >
     <br>
     <br>
     <br>

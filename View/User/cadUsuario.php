@@ -6,6 +6,7 @@ include("../../Menu.php");
 <html>
     <head>
         <meta charset="utf-8">
+        <title>Cadastro de Usuários</title>
         <br>
         <br>
         <br>
@@ -19,7 +20,7 @@ include("../../Menu.php");
 <br>
 <br>
  
-    <body background="/View/images/fundo.jpg"; background-size: 100% auto; >
+    <body background="/View/images/fundo.png"; background-size: 100% auto; >
 
        
             <form action="../../Controller/UserController.php?operation=cadastrar" method="post" name="form_user">
