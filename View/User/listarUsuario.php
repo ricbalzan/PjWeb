@@ -4,8 +4,6 @@
 ?>
 
 <html>
-
-
 <link rel="stylesheet" type="text/css" href="../templates/bootstrap/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="../templates/bootstrap/css/menu.css" />
     <head>
@@ -21,6 +19,7 @@
         <?php
       if (isset($_SESSION['usuario'])) {
             include_once '../../Model/Usuario.php';
+            
             $usuario = array();
             $usuario = unserialize($_SESSION['usuario']);
 
@@ -29,26 +28,26 @@
                 $table .= '<thead class="thead-dark">';
                 $table .= '<tr>';
                 $table .= '<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCPF</td>';
-                $table .= '<td>Nome</td>';
+                $table .= '<td>NOME</td>';
                 $table .= '<td>RG</td>';
-                $table .= '<td>Tipo</td>';
-                $table .= '<td>Ativo</td>';
-                $table .= '<td>Contrato</td>';
-                $table .= '<td>Editar</td>';
-                $table .= '<td>Excluir</td>';
+                $table .= '<td>TIPO</td>';
+                $table .= '<td>ATIVO</td>';
+                $table .= '<td>CONTRATO</td>';
+                $table .= '<td>EDITAR</td>';
+                $table .= '<td>EXCLUIR</td>';
                 $table .= '</tr>';
                 $table .= '</thead>';
                 $table .= '<tbody>';
 
-                foreach ($usuario as $key => $usuario) {
+                foreach ($usuario as $u) {
                   $table .= '<tr>';
 
-                  $cpf = $usuario['cpf'];
-                  $nomeCompleto = $usuario['nome'];
-                  $rg = $usuario['rg'];
-                  $tipo = $usuario['tipo'];
-                  $ativo = $usuario['ativo'];
-                  $contrato = $usuario['contrato'];
+                  $cpf = $u['cpf'];
+                  $nomeCompleto = $u['nome'];
+                  $rg = $u['rg'];
+                  $tipo = $u['tipo'];
+                  $ativo = $u['ativo'];
+                  $contrato = $u['contrato'];
 
                       $table .= "<td>$cpf</td>";
                       $table .= "<td>$nomeCompleto</td>";
