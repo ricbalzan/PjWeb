@@ -17,15 +17,21 @@
 
 
     <body>
+
+    <?php
+        $user = unserialize($_SESSION['usuario']);
+        if (!$user)
+        header("location:../../index.php");
+    ?>
         <?php
     
-        if (isset($_SESSION['linha'])) {
+        if (isset($_SESSION['linhas'])) {
             include_once '../../Model/Numero.php';
-            var_dump($users).die;
-       $linha = array();
-            $linha = unserialize($_SESSION['linha']);
+            //var_dump($linha).die;
+            $linhas = array();
+            $linhas = unserialize($_SESSION['linhas']);
 
-           foreach($linha as $l) {
+           foreach($linhas as $l) {
                 $numero = $l['numero'];
                 $sim = $l['sim'];
                 $data = $l['data'];

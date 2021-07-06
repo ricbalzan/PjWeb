@@ -20,8 +20,9 @@ include("../../Menu.php");
 <br>
  
     <body background="/View/images/fundo.png"; background-size: 100% auto; >
+  
 
-       
+
             <form action="../../Controller/UserController.php?operation=cadastrar" method="post" name="form_user">
 
                 <div class="container" id="homer">

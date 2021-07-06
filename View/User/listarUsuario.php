@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../../Menu.php"); 
+    include("../../Menu.php");
 ?>
 
 <html>
@@ -16,9 +16,10 @@
 
 
     <body>
+
         <?php
-      if (isset($_SESSION['usuario'])) {
-            include_once '../../Model/Usuario.php';
+      //if (isset($_SESSION['usuario'])) {
+       // include_once '../../Model/Usuario.php';
             
             $usuario = array();
             $usuario = unserialize($_SESSION['usuario']);
@@ -27,7 +28,7 @@
                 $table  = '<table class="table">';
                 $table .= '<thead class="thead-dark">';
                 $table .= '<tr>';
-                $table .= '<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCPF</td>';
+                $table .= '<td>CPF</td>';
                 $table .= '<td>NOME</td>';
                 $table .= '<td>RG</td>';
                 $table .= '<td>TIPO</td>';
@@ -59,7 +60,7 @@
                       $table .= "<td><a class='btn btn-danger' href='../../Controller/UserController.php?operation=deletar&id=$cpf'>Excluir</a></td>";
                   $table .= '</tr>';
               }
-      }
+      
               // fecahamento do html
     $table .= '</tbody>';
     $table .= '</table>';

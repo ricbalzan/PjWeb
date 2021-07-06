@@ -11,7 +11,7 @@
         public function create($usuario) {
             try {
                 $statement = $this->connection->prepare(
-                    "INSERT INTO usuario (cpf, nome, email, senha, nascimento, rg, ativo, contrato, tipo) VALUES (?,?,?,?,?,?,?,?,?)"
+                    "INSERT INTO usuario (cpf, nome, email, senha, nascimento, rg, ativo, contrato, tipo) VALUES (?,?,?,md5(?),?,?,?,?,?)"
                 );
 
                 $statement->bindValue(1, $usuario->cpf);
@@ -27,7 +27,7 @@
 
                 $statement->execute();
 
-                var_dump($statement); die();
+                //var_dump($statement); die();
 
                 //encerra a conexão
                 $this->connection = null;
@@ -70,7 +70,7 @@
             try {
                // echo $cpf."<br>";
                // echo $senha."<br>";
-                $statement = $this->connection->prepare("SELECT * FROM usuario WHERE cpf = ? and senha = ?");
+                $statement = $this->connection->prepare("SELECT * FROM usuario WHERE cpf = ? and senha = md5(?)");
                 $statement->bindValue(1, $cpf);
                 $statement->bindValue(2, $senha);
                 $statement->execute();

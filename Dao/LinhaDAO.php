@@ -22,8 +22,8 @@
 
                 $statement->execute();
 
-               var_dump($statement); die();
-
+              // var_dump($statement); die();
+              echo "linha cadastrtada com sucesso!!!";
                 //encerra a conexão
                 $this->connection = null;
             } catch (PDOException $e) {

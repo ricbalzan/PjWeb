@@ -3,11 +3,16 @@
 include("../../Menu.php"); 
 ?> 
 
+<body>
+
+<body>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Cadastro de Linhas</title>
+
         <br>
         <br>
         <br>
@@ -23,7 +28,7 @@ include("../../Menu.php");
 
     </head>
 
-    <body background="/View/images/fundo.jpg" class="img-fluid" alt="Imagem responsiva">
+ 
 
     <form action="../../Controller/SimController.php?operation=cadastrar" method="post" name="form_sim">
 
