@@ -35,7 +35,7 @@
              
                 $_SESSION['user'] = $usuario->nome;
                 $_SESSION['mail'] = $usuario->email;
-                header("location:../View/User/detail.php");
+                //header("location:../View/User/detail.php");
             }
             else {
                 //echo "Ocorreram erros ao cadastrar o usuário<br>";
@@ -49,8 +49,8 @@
         $UserDao = new UserDAO;
         $usuario = $UserDao->search();
 
-        $_SESSION['users'] = serialize($usuario);
-        header("location:../View/User/listarUsuario.php");
+        $_SESSION['usuario'] = serialize($usuario);
+        //header("location:../View/User/listarUsuario.php");
     }
 
     function atualizar() {

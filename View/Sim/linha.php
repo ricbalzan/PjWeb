@@ -5,7 +5,6 @@ include("../../Menu.php");
 
 <body>
 
-<body>
 
 <!DOCTYPE html>
 <html>

@@ -19,9 +19,8 @@ include("../../Menu.php");
 <br>
 <br>
  
-    <body background="/View/images/fundo.png"; background-size: 100% auto; >
+    <body>
   
-
 
             <form action="../../Controller/UserController.php?operation=cadastrar" method="post" name="form_user">
 

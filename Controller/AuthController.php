@@ -14,6 +14,7 @@
             if ($user) {
                     $_SESSION['usuario'] = serialize($user);
                     header("location:../View/User/cadUsuario.php");
+ 
             } 
             else {
                 unset($_SESSION['usuario']);
