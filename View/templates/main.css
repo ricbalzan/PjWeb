@@ -1,0 +1,159 @@
+/* CSS reset */
+*, *:before, *:after { 
+    margin:0;
+    padding:0;
+    font-family: Arial,sans-serif;
+  }
+  
+  body{
+    background-image: url(../images/fundo.jpg);
+    background-position: center;
+    background-size: cover;
+    margin:10px;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+
+  /* formatando o cabeçalho dos formulários */
+  h1{
+    font-size: 48px;
+    color: #1de1f7;
+    padding: 10px 0;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  h1:after{
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 10px;
+    background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
+    background: linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
+  }
+  
+  p{
+    margin-bottom:15px;
+  }
+  p:first-child{
+    margin: 0px;
+  }
+  label{
+    color: #405c60;
+    position: relative;
+  }
+  
+  /**** advanced input styling ****/
+  /* placeholder */
+  ::-webkit-input-placeholder  {
+    color: #bebcbc; 
+    font-style: italic;
+
+  }
+  input:-moz-placeholder,
+  textarea:-moz-placeholder{
+    color: #bebcbc;
+    font-style: italic;
+  } 
+  input {
+    outline: none;
+  }
+  
+    #cpf {
+        margin-top: 4px;
+        padding: 10px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        
+        transition: all 1s linear;
+    }
+    #nome {
+        margin-top: 4px;
+        padding: 10px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        
+        transition: all 0.2s linear;
+
+    }
+        
+    <td><label for="cpf"></label>
+              <P><INPUT onkeypress="formatar(this,'000.000.000-00')" id=dta 
+                style="WIDTH: 100px; HEIGHT: 17px" maxLength=14 size=30 name=dta 
+                background-color:#FFFFFF? padding-bottom:1px; padding-top:1px; 
+                padding-right:4px; padding-left:4px; font-weight:700; 8pt; font-size: Verdana; 
+                font-family: border-width:1px; style:dashed;></P>
+              </td>
+
+
+    .conteudo {
+        background-color: rgb(0,0,0,0.4);
+        width: 900px;
+        margin: auto;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        
+        transition: all 0.2s linear;
+    }
+
+
+  /*formulario*/
+  input:not([type="checkbox"]){
+   
+    width: 50%;
+    margin-top: 4px;
+    padding: 10px;
+    border: 1px solid #b2b2b2;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    
+    transition: all 0.2s linear;
+  
+  }
+  
+  /*estilo do botão submit */
+  input[type="submit"]{
+    width: 25%!important;
+    cursor: pointer;  
+    background: #3d9db3;
+    padding: 8px 5px;
+    color: #fff;
+    font-size: 20px;  
+    border: 1px solid #fff; 
+    margin-bottom: 10px;  
+    text-shadow: 0 1px 1px #333;
+    
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    
+    transition: all 0.2s linear;
+  }
+  input[type="submit"]:hover{
+    background: #4ab3c6;
+  }
+  
+ /*estilo do botão reset */
+ input[type="reset"]{
+    width: 25%!important;
+    cursor: pointer;  
+    background: #3d9db3;
+    padding: 8px 5px;
+    color: #fff;
+    font-size: 20px;  
+    border: 1px solid #fff; 
+    margin-bottom: 10px;  
+    text-shadow: 0 1px 1px #333;
+    
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    
+    transition: all 0.2s linear;
+  }
+  input[type="submit"]:hover{
+    background: #4ab3c6;
+  }
+  
