@@ -10,10 +10,11 @@
             if (!isset(self::$instance)) {
                 try {
                     self::$instance = new ConnectionDB(
-                        "pgsql:dbname=pjweb",
-                        "host=localhost:port=5432",
-                        "pjweb",
-                        "3mbvg20p"
+                        "pgsql:host=localhost",
+                        "postgres",
+                        "3mbvg20p",
+                        "port=5432",
+                        "dbname=pjweb",
                     );
                     echo "conexão com o banco de dados efetuada com sucesso!";
                 } catch (Exception $e) {
