@@ -4,7 +4,7 @@ PjMovel Web
 Controle de Telefonia móvel construído com: <br>
 PHP 7.0<br>
 JQuery 1.9.1<br>
-MySQL 5.3<br>
+Postgress 14<br>
 Framework Boostrap v. 2.3.2 (CSS)<br>
 
 
